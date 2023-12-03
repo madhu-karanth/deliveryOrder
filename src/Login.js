@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './Login.css'; // Import your CSS file
 
 function Login() {
     const [deliveryPerson, setDeliveryPerson] = useState({
@@ -49,15 +50,26 @@ function Login() {
     };
 
     return (
-        <div className="App">
-            <input
-                type="text"
-                name="DeliveryPersonID"
-                placeholder="Delivery personeel ID"
-                onChange={setInput}
-            ></input>
-            <button onClick={login}>Fetch User Details</button>
-            <button onClick={deleteUserDetails}>Delete User</button>
+        <div className="user-details-container">
+            <h2>User Details</h2>
+            <div className="input-group">
+                <label htmlFor="deliveryPersonID">Delivery Personnel ID:</label>
+                <input
+                    type="text"
+                    id="deliveryPersonID"
+                    name="deliveryPersonID"
+                    placeholder="Enter ID"
+                    onChange={setInput}
+                />
+            </div>
+            <div className="button-group">
+                <button onClick={login} className="fetch-button">
+                    Fetch User Details
+                </button>
+                <button onClick={deleteUserDetails} className="delete-button">
+                    Delete User
+                </button>
+            </div>
         </div>
     );
 }

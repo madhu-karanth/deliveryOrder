@@ -4,7 +4,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url('images/login.jpg');
+    background-size: cover; /* or 'contain' depending on your preference */
+    background-position: center center;
 }
+
 
 .user-details-container {
     width: 400px; /* Set a fixed width */

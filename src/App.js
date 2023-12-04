@@ -17,10 +17,8 @@ function App() {
             try {
 
                 const response = await axios.get(`/api/orders/${userDetails.DeliveryPersonID}`);
-                console.log(response);
                 if (response.status === 200 && response.data) {
-                    console.log("khushi",response.data);
-                    const {orders}=response.data
+                    const { orders } = response.data
                     setOrders(orders);
                 } else {
                     console.error('Failed to fetch orders');
@@ -42,15 +40,12 @@ function App() {
     const deleteOrderDetails = async (orderId) => {
         console.log(orderId);
         try {
-            
-           
-
             const response = await axios.delete(`/api/orders/${orderId}`);
             console.log(response);
             if (response.status === 200) {
                 const restorder = orders.filter((ord) => ord.OrderID !== orderId);
-           console.log("deleted");
-                 setOrders(restorder);
+                console.log("deleted");
+                setOrders(restorder);
             } else {
                 console.error('Failed to fetch orders');
             }
@@ -72,7 +67,7 @@ function App() {
                     <p>Contact Number: {ContactNumber}</p>
                     <p>Email: {Email}</p>
                     <p>Vehicle ID: {VehicleID}</p>
-                    
+
                     <h2 className="heading">Order Details</h2>
                     {orders.length === 0 ? (
                         <p>No orders found for this delivery person.</p>
@@ -86,7 +81,7 @@ function App() {
                                     <p>Pickup Person Name: {order.PName}</p>
                                     <p>Pickup Address: {order.PAddress}</p>
                                     <p>Pickup Contact: {order.ContactNumber}</p>
-                                    <button onClick={()=>deleteOrderDetails(order.OrderID)}>Delete</button>
+                                    <button onClick={() => deleteOrderDetails(order.OrderID)}>Delete</button>
                                     {/* Add more order details as needed */}
                                 </li>
                             ))}

@@ -6,7 +6,7 @@ import './Login.css'; // Import your CSS file
 
 function Login() {
     const [deliveryPerson, setDeliveryPerson] = useState({
-        DeliveryPersonID: '',
+        deliveryPersonID: '',
     });
     const navigate = useNavigate();
     const setInput = (e) => {
@@ -20,13 +20,13 @@ function Login() {
     const login = async () => {
         try {
             const response = await axios.post('/api/login', {
-                ID: deliveryPerson.DeliveryPersonID,
+                ID: deliveryPerson.deliveryPersonID,
             });
             if (response.status === 200) {
                 // Login successful
                 const userDetails = response.data;
                 // Redirect to App.js and pass user details as a prop
-                navigate(`/app/${userDetails.DeliveryPersonID}`, { state: userDetails });
+                navigate(`/app/${userDetails.deliveryPersonID}`, { state: userDetails });
             } else {
                 // Handle unsuccessful login
                 console.log('Login failed');

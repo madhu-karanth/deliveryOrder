@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import Update from './Update';
 import reportWebVitals from './reportWebVitals';
 import Login from './Login';
 
@@ -14,6 +15,7 @@ root.render(
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/app/:id" element={<App />} />
+      <Route path="/update/:id" element={<Update />} />
       {/* Redirect to Login page if no route matches */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

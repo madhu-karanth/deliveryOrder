@@ -55,7 +55,7 @@ function App() {
         window.alert("Update success");
       } else {
         // Handle unsuccessful login
-        console.log("Login failed");
+        console.log("Update failed");
       }
     } catch (error) {
       console.error(error);

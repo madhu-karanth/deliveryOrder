@@ -71,6 +71,24 @@ function Login() {
     }
   };
 
+  const createOrderDetails = async () => {
+    try {
+      const response = await axios.post("/api/login", {
+        ID: deliveryPerson.deliveryPersonID,
+      });
+      if (response.status === 200) {
+        navigate(`/create/${deliveryPerson.deliveryPersonID}`, {
+          state: response.data,
+        });
+      } else {
+        // Handle unsuccessful login
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="user-details-container">
       <h2>User Details</h2>
@@ -93,6 +111,9 @@ function Login() {
         </button>
         <button onClick={deleteUserDetails} className="delete-button">
           Delete User
+        </button>
+        <button onClick={createOrderDetails} className="create-button">
+          Create Order
         </button>
       </div>
     </div>

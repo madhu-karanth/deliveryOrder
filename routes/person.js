@@ -24,4 +24,14 @@ router.post("/update", async (req, res) => {
   }
 });
 
+router.post("/create", async (req, res) => {
+  try {
+    await shippingOper.createPerson(req.body);
+    res.json({ message: "Success" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 module.exports = router;

@@ -1,19 +1,9 @@
-# Getting Started with Create React App
+The project utilizes a variety of technologies:
+Backend: Node.js with Express for routing and server-side logic.
+Frontend: React for building a dynamic user interface.
+Database: Likely using a database SQL for storing order and user data, managed through the shippingDB directory.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-### Beginning for new developers
-npm i
+This project is a web application designed to manage shipping orders and user data. The backend is built using Node.js and Express, providing API routes to handle operations such as creating, updating, and retrieving orders and user information. The frontend is developed with React, offering a user-friendly interface for users to interact with the system, such as logging in, creating new orders, and updating existing ones.
 
 
-### `npm start`
-
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
-### `node server.js`
-
-Runs the backend server for delivery order
+[deliveryReport.pdf](https://github.com/user-attachments/files/16795514/deliveryReport.pdf)
